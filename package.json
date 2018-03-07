@@ -1,0 +1,11 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "http-server samples -o",
+        "dev": "browser-sync start -s samples -f samples"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.23.6",
+        "http-server": "^0.11.1"
+    }
+}

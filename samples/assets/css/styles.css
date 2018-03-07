@@ -1,0 +1,49 @@
+a {
+    color: inherit;
+}
+
+.header h1, .header h2 {
+    text-transform: uppercase;
+}
+
+.error {
+    padding: 1em 0;
+    color: #e1332b;
+}
+
+.sidebar {
+    background-color: #1e332b;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+.sidebar .home-link {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+.sidebar .header {
+    text-align: right;
+    margin: 0 2em;
+}
+
+.content {
+    padding: 2em 1em 0;
+}
+
+.content h2 {
+    color: #5e736b;
+    margin-bottom: 0;
+}
+
+main {
+    margin-top: 2em;
+}
+
+.pure-menu-heading {
+    display: block;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    margin: 0 4px 8px;
+}
