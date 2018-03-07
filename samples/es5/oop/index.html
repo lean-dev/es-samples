@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES5 - OOP</title>
+    <link rel="stylesheet" href="../../assets/css/pure-min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <style>
+      main .pure-u-1-3 {
+        box-sizing: border-box;
+        padding: 0 1em;
+      }
+      .completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+<body>
+    <div class="layout pure-g">
+        <div class="sidebar pure-u-1 pure-u-md-1-4">
+            <a class="home-link" href="../..">Samples Root</a>
+            <div class="header">
+                <h1>ES5</h1>
+            </div>
+        </div>
+        <div class="content pure-u-1 pure-u-md-3-4">
+            <div class="header">
+                <h2>OOP</h2>
+                <hr>
+            </div>
+            <main>
+                <div class="pure-g">
+                  <div class="pure-u-1-3">
+                    <form class="pure-form">
+                      <fieldset>
+                          <legend>Layer 1 - Literale Objekte</legend>
+
+                          <input type="text" id="txt1" placeholder="Was gibt es tu tun?" class="pure-input-2-3">
+                          <button type="button" id="btn1" class="pure-button pure-button-primary">Tue es!</button>
+                      </fieldset>
+                    </form>
+                    <ul id="lst1"></ul>
+                  </div>
+                  <div class="pure-u-1-3">
+                      <form class="pure-form">
+                          <fieldset>
+                              <legend>Layer 2 - Prototyp</legend>
+
+                              <input type="text" id="txt2" placeholder="Was gibt es tu tun?" class="pure-input-2-3">
+                              <button type="button" id="btn2" class="pure-button pure-button-primary">Tue es!</button>
+                          </fieldset>
+                        </form>
+                        <ul id="lst2"></ul>
+                  </div>
+                  <div class="pure-u-1-3">
+                      <form class="pure-form">
+                          <fieldset>
+                              <legend>Layer 3 - Konstruktor</legend>
+
+                              <input type="text" id="txt3" placeholder="Was gibt es tu tun?" class="pure-input-2-3">
+                              <button type="button" id="btn3" class="pure-button pure-button-primary">Tue es!</button>
+                          </fieldset>
+                        </form>
+                        <ul id="lst3"></ul>
+                  </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,11 +1,12 @@
 
 // IIFE - Immediatly Invoked Function Expression
-(function() {
+(function(window) {
 
     var localVar = 42;
 
-    windows.exported = {
+    window.exported = {
         localVar: localVar
     };
 
-})();
+    window.
+})(window);

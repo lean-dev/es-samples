@@ -2,7 +2,6 @@
 var globalVar = 42;
 
 function globalFn() {
-
     console.log(globalVar);
 
     var globalVar = 17;
@@ -25,3 +24,5 @@ function calculate() {
     var notCallableHelper3 = function(){};
 
 }
+
+calculate();
