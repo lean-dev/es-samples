@@ -62,7 +62,7 @@ for( const n of teilnehmer) {
     console.log(n);
 }
 
-function *  names () {
+function *  numbers () {
     yield 1;
     yield 2;
     yield 13;
@@ -77,3 +77,4 @@ function * nonIterations () {
     yield 1;
     console.log("Last It");
 }
+
