@@ -6,10 +6,34 @@
     // einfacher Array-Store
     var todos = [];
 
+    var propName = "firstname";
+    var demo = {
+        [propName]: 'Micha',
+        _privat: 0,
+        get privat() { return this._privat; }
+    };
+    Object.defineProperty(demo,'lastname', {
+        writable: false,
+        enumerable: true,
+        configurable: false,
+        value: 'Alt'
+    });
+Object.defineProperty(demo, 'age', {
+        enumerable: false,
+        configurable: false,
+        get: function() {
+            return new Date().getFullYear() - 1971;
+        }
+})
+    window.demoObj = demo;
+
     // literales Objekt
+    // Key-Value Maps (PropertyName -> Value)
+    // Methode: Value ist Function
     var t1 = {
-        txt: "OOP",
-        completed: false,
+        "txt": "OOP",
+        _completed: false,
+        get completed() { return this._completed; },
         toogle: function () {
             this.completed = !this.completed;
         }
@@ -76,6 +100,24 @@
     // einfacher Array-Store
     var todos = [];
 
+    var todoPrototype = {
+        toogle: function toogle() { this.completed = !this.completed; }
+    };
+
+    // ES5
+    var t2 = Object.create(todoPrototype);
+    t2.txt = 'Layer 2';
+    t2.completed = false;
+
+    // ES 6
+    var t1 = {
+        txt: 'Layer 1',
+        completed: true,
+        __proto__: todoPrototype
+    }
+
+    window.todoPrototype = todoPrototype;
+
     // View rendering
     var lst = document.getElementById('lst2');
     var input = document.getElementById('txt2');
@@ -92,11 +134,9 @@
         var txt = input.value.trim();
         if (txt) {
             var todo = {
-                txt: txt,
+                txt,
                 completed: false,
-                toogle: function () {
-                    this.completed = !this.completed;
-                }
+                __proto__: todoPrototype
             };
             appendItemToList(lst, todo);
             input.value = '';
@@ -114,6 +154,18 @@
     // einfacher Array-Store
     var todos = [];
 
+    // Klasse: Todo
+    // Konstruktor
+    function Todo(txt) {
+        this.txt = txt;
+        this.completed = false;
+    }
+    Todo.prototype.toogle = function() { this.completed = !this.completed;};
+
+    var t1 = new Todo('OOP');
+
+    console.log(t1.__proto__ === Todo.prototype);
+
 
     // View rendering
     var lst = document.getElementById('lst3');
@@ -130,13 +182,7 @@
     function submitInput(ev) {
         var txt = input.value.trim();
         if (txt) {
-            var todo = {
-                txt: txt,
-                completed: false,
-                toogle: function () {
-                    this.completed = !this.completed;
-                }
-            };
+            var todo = new Todo(txt);
             appendItemToList(lst, todo);
             input.value = '';
         }
